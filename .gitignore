@@ -1,0 +1,12 @@
+#Ignore compiled binary
+*.out
+*.cgi
+
+#Ignore object files
+*.o
+
+#Ignore vim swap files
+*.swp
+
+#ignore the error log from apache
+error.log
