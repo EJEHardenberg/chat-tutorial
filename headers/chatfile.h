@@ -11,7 +11,7 @@
 #include "config.h"
 
 /* Returns 1 if the lastCheckedTime is less than the last write to the file */
-time_t fileLastModifiedAfter(const char * filename, time_t lastCheckedTime);
+int fileLastModifiedAfter(const char * filename, time_t lastCheckedTime);
 
 /* Returns NULL on err, otherwise a Read Only file descriptor for the chat file */
 FILE * getChatFile();

@@ -26,7 +26,7 @@ static int create_chat_file(){
 }
 
 /* Check if the file was modified after the lastCheckedTime */
-time_t fileLastModifiedAfter(const char * filename, time_t lastCheckedTime){
+int fileLastModifiedAfter(const char * filename, time_t lastCheckedTime){
 	struct stat buffer;
 	stat(filename, &buffer);
 	return lastCheckedTime < buffer.st_mtime;

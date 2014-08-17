@@ -26,6 +26,9 @@ clean: ./headers/config.h
 $(OBJECTS): obj/%.o : src/%.c ./headers/config.h
 	${CC} ${CFLAGS} -c -o $@ $< 
 
+test-internal:
+	${CC} ${LINKFLAGS} test/test-chat.c obj/chatfile.o -o bin/test-chat.out
+
 config:
 	-@mv ./headers/config.h ./headers/config.h.bak
 	cp ./headers/sample-config.h ./headers/config.h && vi ./headers/config.h
