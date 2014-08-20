@@ -2,6 +2,7 @@
 CC = cc
 CFLAGS = -std=gnu99 -pedantic -Wall -Wextra -Werror -g -I./headers
 LINKFLAGS = $(CFLAGS) 
+LIBS = lib/wolkykim-qdecoder-63888fc/src/libqdecoder.a
 
 INTERNAL = $(patsubst src/internal/%.c,%, $(wildcard src/internal/*.c))
 
@@ -15,7 +16,7 @@ all: $(TARGETS) internal
 internal: $(INTERNAL)
 
 $(TARGETS): $(OBJECTS) $(INTERNAL)
-	${CC} ${LINKFLAGS} -o $@ $(patsubst bin/%.cgi, obj/%.o, $@ ) $(patsubst %, obj/%.o, $(INTERNAL)) 
+	${CC} ${LINKFLAGS} -o $@ $(patsubst bin/%.cgi, obj/%.o, $@ ) $(patsubst %, obj/%.o, $(INTERNAL)) ${LIBS}
 
 $(INTERNAL): ./headers/config.h
 	${CC} ${CFLAGS} -c src/internal/$@.c -o obj/$@.o 
