@@ -30,6 +30,12 @@ $(OBJECTS): obj/%.o : src/%.c ./headers/config.h
 test-internal:
 	${CC} ${LINKFLAGS} test/test-chat.c obj/chatfile.o -o bin/test-chat.out
 
+test-poll:
+	QUERY_STRING="date=no" ${valgrind} ./bin/poll.cgi
+	QUERY_STRING="date=1" ${valgrind} ./bin/poll.cgi
+	QUERY_STRING="date=100000000000" ${valgrind} ./bin/poll.cgi
+	QUERY_STRING="" ${valgrind} ./bin/poll.cgi
+
 config:
 	-@mv ./headers/config.h ./headers/config.h.bak
 	cp ./headers/sample-config.h ./headers/config.h && vi ./headers/config.h
