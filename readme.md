@@ -2,7 +2,7 @@ This is the source code for a tutorial on [my website]. The tutorial is
 broken into three parts. 
 
 - [Part One]: Introduction, Architecture, Internal C Function 
-- [Part Two]: Using qdecoder, creating the Web facing API (not released yet)
+- [Part Two]: Using qdecoder, creating the Web facing API
 - Part Three: Creating the Web Interface to the Chat Server (not released yet)
 
 Also, I will be tagging the ending commits of each tutorial so it is easy to 
@@ -44,3 +44,4 @@ something like this to run the application:
 
 [my website]:http://www.ethanjoachimeldridge.info
 [Part One]:http://www.ethanjoachimeldridge.info/tech-blog/cgi-c-harp-1
+[Part Two]:http://www.ethanjoachimeldridge.info/tech-blog/cgi-c-harp-2
