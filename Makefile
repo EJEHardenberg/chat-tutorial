@@ -1,3 +1,4 @@
+#!/bin/bash
 #Configurations and setup
 CC = cc
 CFLAGS = -std=gnu99 -pedantic -Wall -Wextra -Werror -g -I./headers
@@ -35,6 +36,12 @@ test-poll:
 	QUERY_STRING="date=1" ${valgrind} ./bin/poll.cgi
 	QUERY_STRING="date=100000000000" ${valgrind} ./bin/poll.cgi
 	QUERY_STRING="" ${valgrind} ./bin/poll.cgi
+
+test-chat:
+	CONTENT_TYPE="application/x-www-form-urlencoded" REQUEST_METHOD=POST CONTENT_LENGTH=7 ${valgrind} ./bash bin/chat.cgi <<< "u=12345" 
+	CONTENT_TYPE="application/x-www-form-urlencoded" REQUEST_METHOD=POST CONTENT_LENGTH=23 ${valgrind} ./bin/chat.cgi <<< "u=123456789012345678901"
+	CONTENT_TYPE="application/x-www-form-urlencoded" REQUEST_METHOD=POST CONTENT_LENGTH=11 ${valgrind} ./bin/chat.cgi <<< "u=test&m=hi"
+
 
 config:
 	-@mv ./headers/config.h ./headers/config.h.bak
