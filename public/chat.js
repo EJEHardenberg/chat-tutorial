@@ -163,8 +163,19 @@ jQuery( document ).ready(function( $ ) {
 
 
 	function getChatHistory(){
-		lastUpdatedTime = (new Date().getTime()/1000).toFixed(0)
-		console.info("Polling Server")
+		$.ajax({
+			url: readURL,
+			method: "GET",
+			error: function(){
+				$('#history pre').text("Could not load chat history!")
+				doHeartBeat()
+			},
+			success: function(response){
+				/* The response is plain/text */
+				$('#history pre').text(response)
+				lastUpdatedTime = (new Date().getTime()/1000).toFixed(0)
+			}
+		})
 	}
 
 	doHeartBeat()
