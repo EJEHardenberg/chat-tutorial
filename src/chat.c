@@ -42,7 +42,7 @@ int main(void){
     }
 
     int updated = updateConversation(user, msg);
-    printSuccess(updated, "Message has been sent");
+    printSuccess(updated, updated ? "Message has been sent" : "Message failed to send please try again");
     
     free(user);
     free(msg);

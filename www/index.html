@@ -1,2 +1,38 @@
-<html><body><h1>I'm alive. Yay.
-<iframe src="/chat/read.cgi"></iframe>
+<!DOCTYPE html>
+	<head>
+		<title>Temporary Chat</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="Chat with whoever is online, yourself, or nobody! A sample chat server made in a tutorial by Ethan Joachim Eldridge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" type="text/css" href="/style.css">
+	</head>
+	<body id="index">
+		<header>
+	<h1>Temporary Chat</h1>
+	<small>Talk to random people, you never know who you'll talk to!</small>
+</header>
+<section>
+	<form action="/chat/chat.cgi" method="POST">
+		<input name="u" placeholder="Enter your chat handle">
+		<button>Send</button>
+		<label>
+			<small>Press Enter to Send</small>
+			<input type="checkbox" name="entersend"  />
+		</label>
+		<textarea name="m" placeholder="type your message here and press send"></textarea>
+		
+	</form>
+</section>
+<section>
+	<div id="history">
+		<marquee>Loading</marquee>
+	</div>
+</section>
+	</body>
+	<script type="text/javascript">
+		/* Globals for use by the scripts */
+		window.chatdomain = "//www.chat.dev/chat"
+	</script>
+	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src="/chat.js"></script>
+</html>
