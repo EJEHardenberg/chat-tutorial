@@ -5,14 +5,18 @@ jQuery( document ).ready(function( $ ) {
 
 	var serverUp = true
 
+	var userInputs = 'input,textarea,button'
+	function modifyInputs(onOrOff){
+		$(userInputs).prop('disable',onOrOff)
+		$(userInputs).prop('readonly',onOrOff)
+	}
 	function disableInputs(){
-		$('input,textarea,button').prop('disable',true)
-		$('input,textarea,button').prop('readonly',true)
+		modifyInputs(true);
+		setTimeout(doHeartBeat, 1000)
 	}
 
 	function enableInputs(){
-		$('input,textarea,button').prop('disable',false)
-		$('input,textarea,button').prop('readonly',false)	
+		modifyInputs(false)
 	}
 
 	function doHeartBeat(){
@@ -21,16 +25,17 @@ jQuery( document ).ready(function( $ ) {
 			url: heartbeatURL,
 			success: function(response){
 				serverUp = response.initialized			
-				$('[name=m]').text("").blur()
+				$('marquee').text("Loaded!").blur()
 				$('marquee').fadeTo("slow",0.0)
 				$('#history').fadeTo("fast",1.0)
-				enableInputs()
+				if(serverUp) enableInputs()
+                else disableInputs()
 			},
 			error: function(){
 				$('marquee').text("Could not connect to server,retrying in 1 second").blur()
 				$('#history').fadeTo("slow",.2)
 				disableInputs()
-				setTimeout(doHeartBeat, 1000)
+				
 			}
 		})
 	}
