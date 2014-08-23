@@ -2,7 +2,7 @@
 	"globals" : {
 		"title" : "Temporary Chat",
 		"description" : "Chat with whoever is online, yourself, or nobody! A sample chat server made in a tutorial by Ethan Joachim Eldridge",
-		"chatdomain" : "//www.chat.dev/chat"
+		"chatdomain" : "//chat.ethanjoachimeldridge.info/chat"
 	}
 }
 
