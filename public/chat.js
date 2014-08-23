@@ -135,7 +135,11 @@ jQuery( document ).ready(function( $ ) {
 				$(this).find('textarea').focus()
 			},
 			error: function(){
-				alert("Something seems to have gone wrong!")
+				var updates = $(this).find('span[name=updates]')
+				updates.text("There was an error in contacting the server, please hold.")
+				setTimeout(function(){
+					updates.text("")
+				}, 3000)
 				$(this).fadeTo("slow",1.0)
 				serverUp = false
 				doHeartBeat()
