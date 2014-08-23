@@ -3,7 +3,7 @@ broken into three parts.
 
 - [Part One]: Introduction, Architecture, Internal C Function 
 - [Part Two]: Using qdecoder, creating the Web facing API
-- Part Three: Creating the Web Interface to the Chat Server (not released yet)
+- [Part Three]: Creating the Web Interface to the Chat Server 
 
 Also, I will be tagging the ending commits of each tutorial so it is easy to 
 look through the commit timeline and view the project at different points in time.
@@ -45,3 +45,4 @@ something like this to run the application:
 [my website]:http://www.ethanjoachimeldridge.info
 [Part One]:http://www.ethanjoachimeldridge.info/tech-blog/cgi-c-harp-1
 [Part Two]:http://www.ethanjoachimeldridge.info/tech-blog/cgi-c-harp-2
+[Part Three]:http://www.ethanjoachimeldridge.info/tech-blog/cgi-c-harp-3
