@@ -125,6 +125,11 @@ jQuery( document ).ready(function( $ ) {
 			url: url,
 			context: this,
 			success: function(response){
+				var updates = $(this).find('span[name=updates]')
+				updates.text(response.message)
+				setTimeout(function(){
+					updates.text("")
+				}, 500)
 				$(this).find('textarea').val("")
 				$(this).fadeTo("slow",1.0)
 				$(this).find('textarea').focus()
