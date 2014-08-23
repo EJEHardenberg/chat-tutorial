@@ -3,14 +3,15 @@
 	<small>Talk to random people, you never know who you'll talk to!</small>
 </header>
 <section>
-	<form>
-		<input name="u" >
-		<textarea name="m"></textarea>
+	<form action="/chat/chat.cgi" method="POST">
+		<input name="u" placeholder="Enter your chat handle">
 		<button>Send</button>
 		<label>
 			<small>Press Enter to Send</small>
-			<input type="checkbox" name="entersend" />
+			<input type="checkbox" name="entersend"  />
 		</label>
+		<textarea name="m" placeholder="type your message here and press send"></textarea>
+		
 	</form>
 </section>
 <section>

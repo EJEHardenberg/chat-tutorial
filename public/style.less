@@ -1,0 +1,98 @@
+@bgcolor: #F24E20;
+
+html{
+	font-family: Georgia, Serif;
+	background-color: lighten(@bgcolor, 10);
+}
+body{
+	margin: 0 auto;
+	text-align: center;
+	width: 60%;
+	background-color: @bgcolor;
+	border-radius: 2em;
+	header{
+		width: 100%;
+		padding: 0;
+		background-color: darken(@bgcolor, 20);
+		h1{
+			padding-bottom: 5px;
+			margin-top: 0px;
+			margin-bottom: 0px;
+		} 
+		small{
+			display: block;
+			width: 100%;
+			padding-top: 5px;
+			font-style: italic;
+			background-color: darken(@bgcolor, 10);
+		}
+	}
+	section{
+		width: 100%;
+		form{
+			padding-left: 10%;
+			width: 80%;
+			input,textarea{
+				width: 100%;
+				display: block;
+			}
+			textarea{
+				min-height: 60px;
+			}
+			label{
+				input{
+					vertical-align: middle;
+					display: inline-block;
+					width: auto;
+				}
+			}
+		}
+		#history{
+			min-height: 400px;
+			background-color: #eee;
+			width: 80%;
+			margin-left: 10%;
+			margin-top: 10px;
+			margin-bottom: 10px;
+			padding-bottom: 10px;
+			div{
+				min-height: 400px;
+				display: block;
+				width: 100%;
+				
+				overflow: auto;
+			}
+		}
+		padding-bottom: 10px;
+	}
+}
+
+button {
+   border-top: 1px solid #f797bf;
+   background: #d66585;
+   background: -webkit-gradient(linear, left top, left bottom, from(#9c3e78), to(#d66585));
+   background: -webkit-linear-gradient(top, #9c3e78, #d66585);
+   background: -moz-linear-gradient(top, #9c3e78, #d66585);
+   background: -ms-linear-gradient(top, #9c3e78, #d66585);
+   background: -o-linear-gradient(top, #9c3e78, #d66585);
+   -webkit-border-radius: 15px;
+   -moz-border-radius: 15px;
+   border-radius: 15px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+button:hover {
+	cursor: pointer;
+   	border-top-color: #28597a;
+   	background: #28597a;
+   	color: #ccc;
+   }
+button:active {
+   border-top-color: #1b435e;
+   background: #1b435e;
+   }
