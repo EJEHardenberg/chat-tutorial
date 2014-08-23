@@ -149,6 +149,18 @@ jQuery( document ).ready(function( $ ) {
 
 	})
 
+	var enterToSend = false
+	$('input[name=entersend]').click(function(evt){
+		entersend = this.checked
+	})
+	$('textarea[name=m]').on('keydown',function(evt){
+		if(entersend){
+			if (event.which == 13 || event.keyCode == 13) {
+				$('form').submit()
+			}
+		}
+	})
+
 
 	function getChatHistory(){
 		lastUpdatedTime = (new Date().getTime()/1000).toFixed(0)
